@@ -79,7 +79,5 @@
     } catch (PDOException $ex) {
         var_dump($ex);
     }
-
    }
-
    ?>
