@@ -2,7 +2,8 @@
 
 include("../connection.php");
 
-header("Content-Type: application/json");
+header("Content-type: application/json; charset=utf-8");
+header('Access-Control-Allow-Origin: *');
 
 $user = json_decode(trim(file_get_contents("php://input")), true);
 
@@ -13,10 +14,8 @@ $data = array(
     "description" => $user["description"],
     "profission" => $user["profission"],
     "email" => $user["email"],
-    "city" => $user["city"],
     "country" => $user["country"],
     "telephone" => $user["telephone"],
-    "postal_code" => $user["postal_code"],
     "img_url" => $user["img_url"],
     "username" => $user["username"],
     "password" => $user["password"],

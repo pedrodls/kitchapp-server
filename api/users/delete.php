@@ -1,5 +1,6 @@
 <?php
-
+header("Content-type: application/json; charset=utf-8");
+header('Access-Control-Allow-Origin: *');
     include ("../connection.php");
 
     $id = $_GET["id"];
@@ -9,4 +10,3 @@
         } catch (PDOException $ex) {
             var_dump($ex);
         }
-?>
