@@ -32,10 +32,10 @@ try {
     $cmd = $pdo->prepare(
 
     "INSERT INTO USER ".
-        "(name, description, profission, email, city, country, telephone, postal_code, img_url, username, ".
+        "(name, description, profission, email, country, telephone, img_url, username, ".
         "password, sex, category_profile_id, type_acess_id) ". 
         "values ". 
-        "(:name, :desc, :prof, :mail, :city, :country, :tel, :code, :img, :uname, :pass, :sx, :cat, :role)"
+        "(:name, :desc, :prof, :mail, :country, :tel, :img, :uname, :pass, :sx, :cat, :role)"
     );
 
     #region //validando os campos
@@ -47,13 +47,9 @@ try {
     
     $cmd->bindValue(":mail", filter_var($data["email"], FILTER_VALIDATE_EMAIL), PDO::PARAM_STR);
     
-    $cmd->bindValue(":city", filter_var($data["city"]), PDO::PARAM_STR);
-    
     $cmd->bindValue(":country", filter_var($data["country"]), PDO::PARAM_STR);
     
     $cmd->bindValue(":tel", filter_var($data["telephone"]), PDO::PARAM_STR);
-    
-    $cmd->bindValue(":code", filter_var($data["postal_code"]), PDO::PARAM_STR);
     
     $cmd->bindValue(":img", filter_var($data["img_url"]), PDO::PARAM_STR);
     

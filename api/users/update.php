@@ -34,8 +34,8 @@ try {
 
     "UPDATE USER SET ".
         "name= :name, description= :desc, profission= :prof, ". 
-        "email= :mail, city= :city, country= :country, telephone= :tel, ".
-        "postal_code= :code, img_url= :img, username= :uname, ".
+        "email= :mail, country= :country, telephone= :tel, ".
+        "img_url= :img, username= :uname, ".
         "password= :pass, sex= :sx, category_profile_id= :cat, type_acess_id= :role ".
         "WHERE id = :id" 
 
@@ -50,13 +50,9 @@ try {
     
     $cmd->bindValue(":mail", filter_var($data["email"], FILTER_VALIDATE_EMAIL), PDO::PARAM_STR);
     
-    $cmd->bindValue(":city", filter_var($data["city"]), PDO::PARAM_STR);
-    
     $cmd->bindValue(":country", filter_var($data["country"]), PDO::PARAM_STR);
     
     $cmd->bindValue(":tel", filter_var($data["telephone"]), PDO::PARAM_STR);
-    
-    $cmd->bindValue(":code", filter_var($data["postal_code"]), PDO::PARAM_STR);
     
     $cmd->bindValue(":img", filter_var($data["img_url"]), PDO::PARAM_STR);
     
