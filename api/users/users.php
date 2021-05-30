@@ -40,7 +40,7 @@
               array_push($data['data'], $datum);
         }
         
-        echo json_encode($data, JSON_PRETTY_PRINT);
+        echo json_encode($data);
 
     } catch (PDOException $ex) {
         var_dump($ex);
